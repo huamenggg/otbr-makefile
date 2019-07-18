@@ -1,0 +1,15 @@
+[Unit]
+Description=Border Router Web
+After=wpantund.service
+ConditionPathExists=@sbindir@/otbr-web
+
+[Service]
+EnvironmentFile=-@sysconfdir@/default/otbr-web
+ExecStart=@sbindir@/otbr-web $OTBR_WEB_OPTS
+Restart=on-failure
+RestartSec=5
+RestartPreventExitStatus=SIGKILL
+
+[Install]
+WantedBy=multi-user.target
+Alias=otbr-web.service
