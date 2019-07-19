@@ -27,7 +27,8 @@ endef
 define Build/Configure
 	@echo "Build/Configure"
 	cd $(PKG_BUILD_DIR) && ./bootstrap
-	cd $(PKG_BUILD_DIR) && HOST=mips-openwrt-linux \
+	cd $(PKG_BUILD_DIR) && BIG_ENDIAN = 1 \
+	   	HOST=mips-openwrt-linux \
 		./configure --with-ncp=openthread \
 		--prefix= --exec-prefix=/usr --disable-docs \
 		--disable-web-service --host=mips-openwrt-linux \
