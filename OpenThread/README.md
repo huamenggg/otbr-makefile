@@ -26,7 +26,7 @@ make
 
 ```sh
 # move feeds.conf to OpenWRT directory and then run
-./scripts/feeds update otpackage
+./scripts/feeds update otbrpackage
 ./scripts/feeds install -a -p otbrpackage
 # in "Network" column, select "OpenThread" option
 make menuconfig
