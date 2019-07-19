@@ -2,7 +2,7 @@ include $(TOPDIR)/rules.mk
 
 # Name, version and release number
 # The name and version of your package are used to define the variable to point to the build directory of your package: $(PKG_BUILD_DIR)
-PKG_NAME:=otbr
+PKG_NAME:=openthread
 PKG_VERSION:=1.0
 PKG_RELEASE:=1
 
@@ -13,14 +13,14 @@ PKG_SOURCE_VERSION:=7ca84e4a10020126882cce6237e452e0d09b8221
 include $(INCLUDE_DIR)/package.mk
 
 # Package definition; instructs on how and where our package will appear in the overall configuration menu ('make menuconfig')
-define Package/otbr
-	SECTION:=otbr
+define Package/openthread
+	SECTION:=openthread
 	CATEGORY:=Network
 	TITLE:=openthread border router program
 endef
 
 # Package description; a more verbose description on what our package does
-define Package/otbr/description
+define Package/openthread/description
 	A mesh network border router implementation -application.
 endef
 
@@ -40,7 +40,7 @@ define Build/Compile
 endef
 
 # Package install instructions; create a directory inside the package to hold our executable, and then copy the executable we built previously into the folder
-define Package/otbr/install
+define Package/openthread/install
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/agent/otbr-agent $(1)/usr/bin
 	$(INSTALL_DIR) $(1)/usr/lib
@@ -48,4 +48,4 @@ define Package/otbr/install
 endef
 
 # This command is always the last, it uses the definitions and variables we give above in order to get the job done
-$(eval $(call BuildPackage,otbr))
+$(eval $(call BuildPackage,openthread))
