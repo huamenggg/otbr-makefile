@@ -26,15 +26,15 @@ make
 
 ```sh
 # move feeds.conf to OpenWRT directory and then run
-./scripts/feeds update otbrpackage
-./scripts/feeds install -a -p otbrpackage
-# in "Network" column, select "OpenThread" option
+./scripts/feeds update openthread
+./scripts/feeds install -a -p openthread
+# in "Network" column, select "openthread" option
 make menuconfig
 # package the project
-make package/OpenThread/compile
-# the .ipk file will be in ./bin/packages/mips_24kc/otbrpackage/OpenThread_xxx.ipk
+make package/openthread/compile
+# the .ipk file will be in ./bin/packages/mips_24kc/openthread/openthread_xxx.ipk
 # copy the .ipk file into OpenWRT device, and install
-opkg install OpenThread_xxx.ipk
-# then can use OpenThread on OpenWRT
+opkg install openthread_xxx.ipk
+# then can use openthread on OpenWRT
 otbr-agent -d7 -v /dev/ttyUSB0 115200
 ```
